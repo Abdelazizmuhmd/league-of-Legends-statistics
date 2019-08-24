@@ -55,8 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				7B73A988230DEC10003DE5EE /* Info.plist */,
-				7B73A990230DEC72003DE5EE /* Controllers */,
 				7B73A98E230DEC1E003DE5EE /* Modal */,
+				7B73A990230DEC72003DE5EE /* Controllers */,
 				7B73A98F230DEC62003DE5EE /* Views */,
 				7B73A991230DEC96003DE5EE /* supporting Files */,
 			);
