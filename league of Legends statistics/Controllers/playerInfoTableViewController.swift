@@ -24,15 +24,16 @@ class  playerInfoTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return players.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerInfoCell", for: indexPath)
-        // configure function
+        configure(cell, forItemAt: indexPath)
         return cell
     }
     func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath){
-        
+        let cell = cell as! playerInfoCell
+        cell.playerNameLabel.text = players![indexPath.row].name
         
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

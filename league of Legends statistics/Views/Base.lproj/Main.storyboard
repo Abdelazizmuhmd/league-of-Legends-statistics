@@ -31,7 +31,6 @@
                                 </state>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PkG-69-oFf"/>
-                                    <segue destination="2Dm-H5-DnL" kind="show" identifier="searchPlayerSegue" id="t7e-Sy-ueE"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Summoner Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ob-3O-siq">
@@ -99,6 +98,7 @@
                         <outlet property="cameraDetection" destination="LWS-cy-OcW" id="DEq-Pp-uho"/>
                         <outlet property="picker" destination="sOK-Xb-CmT" id="KyU-Mj-gP5"/>
                         <outlet property="searchTextField" destination="3ob-3O-siq" id="2vx-Cf-F1u"/>
+                        <segue destination="2Dm-H5-DnL" kind="show" identifier="searchPlayerSegue" id="Isf-Rj-4Tj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -114,7 +114,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playerInfoCell" rowHeight="90" id="xF3-5G-6G4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playerInfoCell" rowHeight="90" id="xF3-5G-6G4" customClass="playerInfoCell" customModule="league_of_Legends_statistics" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xF3-5G-6G4" id="bMe-0X-Z6t">
@@ -220,6 +220,13 @@
                                         <constraint firstItem="WDX-BT-7Ti" firstAttribute="leading" secondItem="epd-Pz-0ca" secondAttribute="trailing" constant="27" id="wfo-qC-XUq"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="KdaLabel" destination="Bva-5E-oBh" id="k8T-TB-DI0"/>
+                                    <outlet property="RankLabel" destination="WDX-BT-7Ti" id="3dv-2C-dg4"/>
+                                    <outlet property="WinRatioLabel" destination="yub-Xm-gt5" id="WUY-Uj-Aga"/>
+                                    <outlet property="playerNameLabel" destination="yat-H9-ysU" id="aOT-lC-Y53"/>
+                                    <outlet property="postionLabel" destination="epd-Pz-0ca" id="SfP-t0-R09"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
