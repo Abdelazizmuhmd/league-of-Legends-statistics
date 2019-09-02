@@ -12,6 +12,8 @@
 		7B73A982230DEC10003DE5EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B73A980230DEC10003DE5EE /* Main.storyboard */; };
 		7B73A984230DEC10003DE5EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B73A983230DEC10003DE5EE /* Assets.xcassets */; };
 		7B73A987230DEC10003DE5EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B73A985230DEC10003DE5EE /* LaunchScreen.storyboard */; };
+		7BD09120231BEC5C00F3DC37 /* player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD0911F231BEC5C00F3DC37 /* player.swift */; };
+		7BD09123231BF04C00F3DC37 /* PlayerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD09122231BF04C00F3DC37 /* PlayerAPI.swift */; };
 		7BFD4C5323147E1800F6F78F /* MatchesInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFD4C5223147E1800F6F78F /* MatchesInfoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,8 @@
 		7B73A983230DEC10003DE5EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B73A986230DEC10003DE5EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B73A988230DEC10003DE5EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BD0911F231BEC5C00F3DC37 /* player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = player.swift; path = "league of Legends statistics/Views/player.swift"; sourceTree = SOURCE_ROOT; };
+		7BD09122231BF04C00F3DC37 /* PlayerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAPI.swift; sourceTree = "<group>"; };
 		7BFD4C5223147E1800F6F78F /* MatchesInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesInfoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +64,7 @@
 				7B73A98E230DEC1E003DE5EE /* Modal */,
 				7B73A990230DEC72003DE5EE /* Controllers */,
 				7B73A98F230DEC62003DE5EE /* Views */,
+				7BD09121231BEFF800F3DC37 /* Network */,
 				7B73A991230DEC96003DE5EE /* supporting Files */,
 			);
 			path = "league of Legends statistics";
@@ -68,6 +73,7 @@
 		7B73A98E230DEC1E003DE5EE /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				7BD0911F231BEC5C00F3DC37 /* player.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -97,6 +103,14 @@
 				7B73A983230DEC10003DE5EE /* Assets.xcassets */,
 			);
 			path = "supporting Files";
+			sourceTree = "<group>";
+		};
+		7BD09121231BEFF800F3DC37 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7BD09122231BF04C00F3DC37 /* PlayerAPI.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +184,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BD09120231BEC5C00F3DC37 /* player.swift in Sources */,
 				7B73A97F230DEC10003DE5EE /* searchPageViewController.swift in Sources */,
+				7BD09123231BF04C00F3DC37 /* PlayerAPI.swift in Sources */,
 				7B73A97D230DEC10003DE5EE /* AppDelegate.swift in Sources */,
 				7BFD4C5323147E1800F6F78F /* MatchesInfoTableViewController.swift in Sources */,
 			);

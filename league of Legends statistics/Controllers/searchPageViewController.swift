@@ -20,11 +20,19 @@ class searchPageViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
           picker.delegate = self
         summonerNameButtonStyle(buttonStyle: cameraDetection)
         summonerNameButtonStyle(buttonStyle: SummonerNameButton)
-      
+        test()
     }
     
     
-    
+    func test(){
+        playerAPI.playerApi.fetchPlayerInfo { (player) in
+           
+            print("2222eewe")
+            print(player.accountID)
+            
+            
+        }
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
