@@ -11,7 +11,8 @@ import UIKit
 class searchPageViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     let regions : [String] = ["1","2","3","4","5","6","7","8","9","10","11"]
     
-
+    @IBOutlet weak var searchTextField: UITextField!
+    
     @IBOutlet weak var cameraDetection: UIButton!
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var SummonerNameButton: UIButton!
@@ -20,20 +21,10 @@ class searchPageViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
           picker.delegate = self
         summonerNameButtonStyle(buttonStyle: cameraDetection)
         summonerNameButtonStyle(buttonStyle: SummonerNameButton)
-        test()
+      
     }
     
-    
-    func test(){
-        playerAPI.playerApi.fetchPlayerInfo { (player) in
-           
-            print("2222eewe")
-            print(player.accountID)
-            
-            
-        }
-    }
-    
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -46,7 +37,27 @@ class searchPageViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     }
     
     
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        if searchTextField.text != ""{
+        if let searchText = searchTextField.text{
+            playerAPI.playerApi.fetchPlayerInfo(summonerName: searchText) { (player) in
+          
+            }
+            }}
+    }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "searchPlayerSegue"{
+        if searchTextField.text == ""{
+            return false
+        }else{
+            return true
+            }
+            
+        }else{
+            return false
+        }
+    }
     
     
     

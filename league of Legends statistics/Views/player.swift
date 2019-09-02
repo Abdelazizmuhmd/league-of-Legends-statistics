@@ -11,15 +11,17 @@ struct player : Codable{
  var   profileIconId: Int
  var   name         : String
  var   puuid        : String
- var   accountID    : String
+ var   accountId    : String
  var   id           : String
+ var   summonerLevel: Int
     
   enum CodingKeys : String , CodingKey{
     case name
     case puuid
     case profileIconId
-    case accountID
+    case accountId
     case id
+    case summonerLevel
     }
     init(from decoder: Decoder) throws {
         let valueContainer =  try decoder.container(keyedBy: CodingKeys.self)
@@ -27,6 +29,7 @@ struct player : Codable{
         self.puuid =  try valueContainer.decode(String.self, forKey: CodingKeys.puuid)
         self.profileIconId = try valueContainer.decode(Int.self, forKey: CodingKeys.profileIconId)
         self.id =  try valueContainer.decode(String.self, forKey: CodingKeys.id)
-        self.accountID =  try valueContainer.decode(String.self , forKey: CodingKeys.accountID)
+        self.accountId =  try valueContainer.decode(String.self , forKey: CodingKeys.accountId)
+        self.summonerLevel =  try valueContainer.decode(Int.self, forKey: CodingKeys.summonerLevel)
     }
 }

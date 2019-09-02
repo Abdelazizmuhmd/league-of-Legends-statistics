@@ -30,7 +30,8 @@
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2Dm-H5-DnL" kind="show" identifier="searchMatches" id="t7e-Sy-ueE"/>
+                                    <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PkG-69-oFf"/>
+                                    <segue destination="2Dm-H5-DnL" kind="show" identifier="searchPlayerSegue" id="t7e-Sy-ueE"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Summoner Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ob-3O-siq">
@@ -97,26 +98,27 @@
                         <outlet property="SummonerNameButton" destination="twz-Xk-A9g" id="ezV-Cu-sHd"/>
                         <outlet property="cameraDetection" destination="LWS-cy-OcW" id="DEq-Pp-uho"/>
                         <outlet property="picker" destination="sOK-Xb-CmT" id="KyU-Mj-gP5"/>
+                        <outlet property="searchTextField" destination="3ob-3O-siq" id="2vx-Cf-F1u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-77" y="130"/>
         </scene>
-        <!--Matches Info Table View Controller-->
+        <!--Player Info Table View Controller-->
         <scene sceneID="Ufp-1f-svn">
             <objects>
-                <tableViewController id="2Dm-H5-DnL" customClass="MatchesInfoTableViewController" customModule="league_of_Legends_statistics" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2Dm-H5-DnL" customClass="playerInfoTableViewController" customModule="league_of_Legends_statistics" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qga-5d-ial">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="82" id="xF3-5G-6G4">
-                                <rect key="frame" x="0.0" y="28" width="414" height="82"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playerInfoCell" rowHeight="90" id="xF3-5G-6G4">
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xF3-5G-6G4" id="bMe-0X-Z6t">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="81.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="zizoshoow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="yat-H9-ysU">
