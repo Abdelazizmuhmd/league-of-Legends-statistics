@@ -9,7 +9,8 @@
 import UIKit
 
 class searchPageViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
-    let regions : [String] = ["1","2","3","4","5","6","7","8","9","10","11"]
+    let regions : [String] = ["EUN1","KR","BR1","OC1","LA1","LA2","JP1","NA1","TR1","RU","EUW1"]
+    var selectedRowPicker : Int = 0
     var players = [player]()
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -32,7 +33,7 @@ class searchPageViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
          DispatchQueue.main.async {
         let alert = UIAlertController(title: "Search", message: "can't find player", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
+        alert.dismiss(animated: true, completion: nil)
             
         }))
         self.present(alert, animated: true, completion: nil)
@@ -50,11 +51,14 @@ class searchPageViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         return regions[row]
     }
     
-    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedRowPicker = row
+        
+    }
     @IBAction func searchButtonPressed(_ sender: Any) {
        
         if let searchText = searchTextField.text{
-            playerAPI.playerApi.fetchPlayerInfo(summonerName: searchText) { (player) in
+            playerAPI.playerApi.fetchPlayerInfo(summonerName: searchText,region:regions[selectedRowPicker]) { (player) in
               
                 self.players.append(player)
                 DispatchQueue.main.async {

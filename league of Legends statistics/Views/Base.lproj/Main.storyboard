@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twz-Xk-A9g">
-                                <rect key="frame" x="49.5" y="410.5" width="315" height="60"/>
+                                <rect key="frame" x="49.5" y="410" width="315" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ByN-rd-c5y"/>
@@ -56,14 +56,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOK-Xb-CmT">
-                                <rect key="frame" x="0.0" y="294.5" width="414" height="117"/>
+                                <rect key="frame" x="0.0" y="287.5" width="414" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="Phm-xp-Bny"/>
                                     <constraint firstAttribute="height" constant="117" id="iyK-V2-ntT"/>
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWS-cy-OcW">
-                                <rect key="frame" x="49.5" y="484.5" width="315" height="60"/>
+                                <rect key="frame" x="49.5" y="484" width="315" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="5yx-mx-h1u"/>
@@ -79,9 +79,9 @@
                         <constraints>
                             <constraint firstItem="3ob-3O-siq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2Mb-4M-h3x"/>
                             <constraint firstItem="TTj-Vr-Cqr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FRS-rr-975"/>
-                            <constraint firstItem="twz-Xk-A9g" firstAttribute="top" secondItem="sOK-Xb-CmT" secondAttribute="bottom" multiplier="0.9" constant="40" id="HIE-1x-A3k"/>
+                            <constraint firstItem="twz-Xk-A9g" firstAttribute="top" secondItem="sOK-Xb-CmT" secondAttribute="bottom" multiplier="0.9" constant="46" id="HIE-1x-A3k"/>
                             <constraint firstItem="LWS-cy-OcW" firstAttribute="top" secondItem="twz-Xk-A9g" secondAttribute="bottom" constant="14" id="IY2-vb-EJy"/>
-                            <constraint firstItem="sOK-Xb-CmT" firstAttribute="top" secondItem="KKF-gG-pWy" secondAttribute="bottom" constant="19.5" id="MYJ-y9-Jfo"/>
+                            <constraint firstItem="sOK-Xb-CmT" firstAttribute="top" secondItem="KKF-gG-pWy" secondAttribute="bottom" constant="12.5" id="MYJ-y9-Jfo"/>
                             <constraint firstItem="sOK-Xb-CmT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Oyb-Ku-OIv"/>
                             <constraint firstItem="TTj-Vr-Cqr" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.35" constant="-9.25" id="SIr-Vc-hEG"/>
                             <constraint firstItem="LWS-cy-OcW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WRP-p4-dgg"/>
