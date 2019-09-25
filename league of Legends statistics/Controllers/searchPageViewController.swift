@@ -11,12 +11,10 @@ import UIKit
 class searchPageViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     let regions : [String] = ["EUN1","KR","BR1","OC1","LA1","LA2","JP1","NA1","TR1","RU","EUW1"]
     var selectedRowPicker : Int = 0
-    var players = [player]()
+    var player : player!
+    let dispatchGroup = DispatchGroup()
     @IBOutlet weak var searchTextField: UITextField!
-    
-   
     @IBOutlet weak var cameraDetection: UIButton!
-    
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var SummonerNameButton: UIButton!
     
@@ -26,15 +24,12 @@ class searchPageViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         summonerNameButtonStyle(buttonStyle: cameraDetection)
         summonerNameButtonStyle(buttonStyle: SummonerNameButton)
         NotificationCenter.default.addObserver(self, selector: #selector(alertCanNotFindPlayer),name:playerAPI.canNottFindPlayerNotification, object: nil)
-
-      
     }
     @objc func alertCanNotFindPlayer(){
-         DispatchQueue.main.async {
+        DispatchQueue.main.async {
         let alert = UIAlertController(title: "Search", message: "can't find player", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action) in
         alert.dismiss(animated: true, completion: nil)
-            
         }))
         self.present(alert, animated: true, completion: nil)
         }      
@@ -53,28 +48,42 @@ class searchPageViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedRowPicker = row
-        
     }
+    
     @IBAction func searchButtonPressed(_ sender: Any) {
-       
         if let searchText = searchTextField.text{
-            playerAPI.playerApi.fetchPlayerInfo(summonerName: searchText,region:regions[selectedRowPicker]) { (player) in
-              
-                self.players.append(player)
-                DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "searchPlayerSegue", sender: Any?.self)
-                }
+            
+        playerAPI.playerApi.fetchPlayerInfo(summonerName: searchText,region:regions[selectedRowPicker]) { (player) in
+        self.player = player
+            
+        self.dispatchGroup.enter()
+        playerAPI.playerApi.fetchRankedInfo(Id: player.id) { (ranked) in
+        self.player.Ranked = ranked
+        self.dispatchGroup.leave()
             }
+            
+        self.dispatchGroup.enter()
+        playerAPI.playerApi.fetchPlayerIcon(playerIconId: player.profileIconId){ (icon) in
+        self.player.playerIconImage = icon
+        self.dispatchGroup.leave()
+            }
+        self.dispatchGroup.enter()
+        playerAPI.playerApi.fetchMatchHistory(accountId: player.accountId) { (matchHistory) in
+        self.player.matchHistory = matchHistory
+        self.dispatchGroup.leave()
             }
         
-    }
+            
+        self.dispatchGroup.notify(queue: .main){
+        self.performSegue(withIdentifier: "searchPlayerSegue", sender: Any?.self)
+            }
+        }}}
    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "searchPlayerSegue"{
-            let segueDestination = segue.destination as! playerInfoTableViewController
-          
-            segueDestination.players = self.players
+        let segueDestination = segue.destination as! playerInfoTableViewController
+        segueDestination.players.append(player)
         }
     }
 

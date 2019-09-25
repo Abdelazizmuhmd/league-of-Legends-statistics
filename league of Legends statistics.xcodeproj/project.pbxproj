@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B45596023296F5100A03281 /* ranked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B45595F23296F5100A03281 /* ranked.swift */; };
 		7B73A97D230DEC10003DE5EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73A97C230DEC10003DE5EE /* AppDelegate.swift */; };
 		7B73A97F230DEC10003DE5EE /* searchPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73A97E230DEC10003DE5EE /* searchPageViewController.swift */; };
 		7B73A982230DEC10003DE5EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B73A980230DEC10003DE5EE /* Main.storyboard */; };
 		7B73A984230DEC10003DE5EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B73A983230DEC10003DE5EE /* Assets.xcassets */; };
 		7B73A987230DEC10003DE5EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B73A985230DEC10003DE5EE /* LaunchScreen.storyboard */; };
 		7BA5259C231D744100531F98 /* playerInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA5259B231D744100531F98 /* playerInfoCell.swift */; };
+		7BC8FA5F233A815900FE9E7D /* match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8FA5E233A815900FE9E7D /* match.swift */; };
 		7BD09120231BEC5C00F3DC37 /* player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD0911F231BEC5C00F3DC37 /* player.swift */; };
 		7BD09123231BF04C00F3DC37 /* PlayerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD09122231BF04C00F3DC37 /* PlayerAPI.swift */; };
 		7BFD4C5323147E1800F6F78F /* playerInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFD4C5223147E1800F6F78F /* playerInfoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B45595F23296F5100A03281 /* ranked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ranked.swift; path = "league of Legends statistics/ranked.swift"; sourceTree = SOURCE_ROOT; };
 		7B73A979230DEC10003DE5EE /* league of Legends statistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "league of Legends statistics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B73A97C230DEC10003DE5EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B73A97E230DEC10003DE5EE /* searchPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchPageViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +30,7 @@
 		7B73A986230DEC10003DE5EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B73A988230DEC10003DE5EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BA5259B231D744100531F98 /* playerInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerInfoCell.swift; sourceTree = "<group>"; };
+		7BC8FA5E233A815900FE9E7D /* match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = match.swift; sourceTree = "<group>"; };
 		7BD0911F231BEC5C00F3DC37 /* player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = player.swift; path = "league of Legends statistics/Views/player.swift"; sourceTree = SOURCE_ROOT; };
 		7BD09122231BF04C00F3DC37 /* PlayerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAPI.swift; sourceTree = "<group>"; };
 		7BFD4C5223147E1800F6F78F /* playerInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerInfoTableViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				7BD0911F231BEC5C00F3DC37 /* player.swift */,
+				7B45595F23296F5100A03281 /* ranked.swift */,
+				7BC8FA5E233A815900FE9E7D /* match.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -198,7 +204,9 @@
 				7BD09120231BEC5C00F3DC37 /* player.swift in Sources */,
 				7B73A97F230DEC10003DE5EE /* searchPageViewController.swift in Sources */,
 				7BA5259C231D744100531F98 /* playerInfoCell.swift in Sources */,
+				7BC8FA5F233A815900FE9E7D /* match.swift in Sources */,
 				7BD09123231BF04C00F3DC37 /* PlayerAPI.swift in Sources */,
+				7B45596023296F5100A03281 /* ranked.swift in Sources */,
 				7B73A97D230DEC10003DE5EE /* AppDelegate.swift in Sources */,
 				7BFD4C5323147E1800F6F78F /* playerInfoTableViewController.swift in Sources */,
 			);
